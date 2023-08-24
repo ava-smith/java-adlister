@@ -10,7 +10,7 @@ public class CountServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         String reset = req.getParameter("reset");
         if (reset != null) {
-            count = Integer.parseInt(reset);
+            count = 0;
             res.getWriter().println("<h1>Count is: " + count + "</h1>");
             res.sendRedirect(getServletContext().getContextPath() + "/count");
         } else {
