@@ -5,10 +5,13 @@
     <title>Login</title>
 </head>
 <body>
-<h1>Please Login</h1>
+<%@ include file="partials/navabr.jsp"%>
+<h2>Please Login</h2>
 <form method="POST" action="login.jsp">
-    <input type="text" name="username" placeholder="Enter your username">
-    <input type="text" name="password" placeholder="Enter your password">
+    <label for="username-field">Username</label>
+    <input id="username-field" type="text" name="username" placeholder="Enter your username">
+    <label for="password-field">Password</label>
+    <input id="password-field" type="text" name="password" placeholder="Enter your password">
     <button type="submit">Submit</button>
 </form>
 
