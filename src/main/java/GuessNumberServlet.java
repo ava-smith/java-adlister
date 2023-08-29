@@ -20,7 +20,9 @@ public class GuessNumberServlet extends HttpServlet {
         String guessedNumber = req.getParameter("guessed-number");
         if(Integer.parseInt(guessedNumber) == randomNumber) {
             resp.sendRedirect("correct.jsp");
-        }else {
+        }else if(Integer.parseInt(guessedNumber) > 3 || Integer.parseInt(guessedNumber) < 0){
+            resp.sendRedirect("guess.jsp");
+        } else{
             resp.sendRedirect("incorrect.jsp");
         }
     }
