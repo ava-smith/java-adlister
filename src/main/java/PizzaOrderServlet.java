@@ -18,16 +18,21 @@ public class PizzaOrderServlet extends HttpServlet {
         String sauce = req.getParameter("sauce");
         String size = req.getParameter("size");
         String[] toppings = req.getParameterValues("toppings");
+        String address = req.getParameter("address");
 
         System.out.println(crust);
         System.out.println(sauce);
         System.out.println(size);
-        System.out.println(toppings.toString());
+        for (String top : toppings){
+            System.out.println(top);
+        }
+        System.out.println(address);
 
         req.setAttribute("crust", crust);
         req.setAttribute("sauce", sauce);
         req.setAttribute("size", size);
         req.setAttribute("toppings", toppings);
+        req.setAttribute("address", address);
 
         req.getRequestDispatcher("pizza-order.jsp").forward(req, resp);
     }

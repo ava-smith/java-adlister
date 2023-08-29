@@ -38,20 +38,21 @@
         <h2>Choose your toppings:</h2>
         <div class="toppings-checkboxes">
             <label for="cheese">Cheese</label>
-            <input type="checkbox" id="cheese" name="toppings">
+            <input type="checkbox" id="cheese" name="toppings" value="cheese">
             <label for="pepperoni">Pepperoni</label>
-            <input type="checkbox" id="pepperoni" name="toppings">
+            <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
             <label for="sausage">Sausage</label>
-            <input type="checkbox" id="sausage" name="toppings">
+            <input type="checkbox" id="sausage" name="toppings" value="sausage">
             <label for="jalapenos">Jalapeños</label>
-            <input type="checkbox" id="jalapenos" name="toppings">
+            <input type="checkbox" id="jalapenos" name="toppings" value="jalapenos">
             <label for="mushrooms">Mushrooms</label>
-            <input type="checkbox" id="mushrooms" name="toppings">
+            <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
         </div>
 
         <div class="delivery-address-field">
-            <label for="delivery-address">Please enter your address:</label>
-            <input type="text" id="delivery-address" name="delivery-address">
+            <label for="address">Please enter your address:
+            <input type="text" id="address" name="address">
+            </label>
         </div>
         <button type="submit">Submit</button>
     </form>
