@@ -4,8 +4,13 @@
 <html>
 <head>
     <title>View Color</title>
+    <style>
+        body {
+            background-color: ${backgroundColor};
+        }
+    </style>
 </head>
-<body id="background-color" style="background-color: ${requestScope.favColor}">
+<body id="background-color">
 <div class="container">
   <h1>Your Color!</h1>
 </div>
