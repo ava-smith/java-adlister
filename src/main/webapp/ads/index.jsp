@@ -3,14 +3,21 @@
 
 <html>
 <head>
+    <jsp:include page="/partials/head.jsp">
+        <jsp:param name="title" value="Welcome to my site!" />
+    </jsp:include>
     <title>Ads</title>
 </head>
 <body>
-<h1>Here are all the ads!</h1>
-<ul>
+<jsp:include page="/partials/navbar.jsp" />
+<div class="container">
+    <h1>Welcome to the Adlister!</h1>
+</div>
+
     <c:forEach var="ad" items="${ads}">
-        <li>${ad.title}: ${ad.description}</li>
+        <h2>${ad.title}</h2>
+        <p>${ad.description}</p>
     </c:forEach>
-</ul>
+
 </body>
 </html>
