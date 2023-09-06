@@ -30,10 +30,11 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public List<Ad> all() {
-        Statement stmt = null;
+        PreparedStatement stmt = null;
         try {
-            stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM ads");
+            String sql = "SELECT * FROM ads";
+            stmt = connection.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving all ads.", e);
@@ -50,8 +51,13 @@ public class MySQLAdsDao implements Ads {
             stmt.setString(3, ad.getDescription());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
-            rs.next();
-            return rs.getLong(1);
+//            rs.next();
+//            return rs.getLong(1);
+            if(rs.next()) {
+                return rs.getLong(1);
+            } else {
+                return -1L;
+            }
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
         }

@@ -3,7 +3,7 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Please Log In" />
+        <jsp:param name="title" value="Register" />
     </jsp:include>
     <title>Register</title>
 </head>
@@ -11,6 +11,9 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
     <h1>Sign Up</h1>
+    <c:if test="${invalid == true}">
+        <h2>Invalid inputs, please try again.</h2>
+    </c:if>
     <form action="/register" method="POST">
         <div class="form-group">
             <label for="email">Email</label>
@@ -23,6 +26,10 @@
         <div class="form-group">
             <label for="password">Password</label>
             <input id="password" name="password" class="form-control" type="password">
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input id="confirm_password" name="confirm_password" class="form-control" type="password">
         </div>
         <input type="submit" class="btn btn-primary btn-block" value="Sign Up">
     </form>
