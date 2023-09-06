@@ -43,10 +43,7 @@ public class MySQLUsersDao implements Users {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getEmail());
-
-            String password = user.getPassword();
-            String hash = BCrypt.hashpw(password, BCrypt.gensalt());
-            stmt.setString(3, hash);
+            stmt.setString(3, user.getPassword());
 
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
